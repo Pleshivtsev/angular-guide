@@ -1,1 +1,11 @@
-Servers component
+<button [disabled]="!serverName" class="btn btn-primary" (click)="serverCreated = true">Add server</button>
+<br>
+<input [(ngModel)]="serverName">
+<p *ngIf="serverName && serverCreated; else noServer"> Server was created with name {{ serverName}}</p>
+<ng-template #noServer>
+  <p>No Server was created</p>
+</ng-template>
+
+<app-server></app-server>
+<app-server></app-server>
+
